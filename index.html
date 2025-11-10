@@ -6,12 +6,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.11.1/sha256.min.js" integrity="sha512-YVITnHZw4RIWJdL3B3qiUUjFwe2999f7+GY9p75emmKu62hze4Tr1hSG5SSDPAp1WaMMbjGOZL9YaNzO5UDpYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
+    <a href="https://dirkarnez.github.io/duplicate-file-finder/" target="_blank"></a><br>
     <button id="start">start</button>
     <script>
         document.getElementById("start", async () => {
           const handle = await window.showDirectoryPicker();
           for await (const a of handle.entries()) {
             debugger;
+              window.sha256("123")
           }
         });
     </script>
