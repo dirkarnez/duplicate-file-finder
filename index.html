@@ -9,12 +9,25 @@
     <a href="https://dirkarnez.github.io/duplicate-file-finder/" target="_blank"></a><br>
     <button id="start">start</button>
     <script>
+        async function getChecksumSha256(blob: Blob) {
+          const uint8Array = new Uint8Array(await blob.arrayBuffer());
+          const hashBuffer = await crypto.subtle.digest('SHA-256', uint8Array);
+          const hashArray = Array.from(new Uint8Array(hashBuffer));
+        
+          return hashArray.map((h) => h.toString(16).padStart(2, '0')).join('');
+        }
+        
         document.getElementById("start", async () => {
           const handle = await window.showDirectoryPicker();
           for await (const a of handle.entries()) {
             debugger;
               window.sha256("123")
           }
+            for await (const [key, value] of handle.entries()) {
+                const fileData = await value.getFile();
+                debugger;
+              console.log({ key, value });
+            }
         });
     </script>
 </body>
