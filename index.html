@@ -9,6 +9,7 @@
     <a href="https://dirkarnez.github.io/duplicate-file-finder/" target="_blank"></a><br>
     <button id="start">start</button>
     <script>
+        // [使用FileReader.readAsArrayBuffer()在浏览器中处理大文件](https://joji.me/zh-cn/blog/processing-huge-files-using-filereader-readasarraybuffer-in-web-browser/)
         async function getChecksumSha256(blob: Blob) {
           const uint8Array = new Uint8Array(await blob.arrayBuffer());
           const hashBuffer = await crypto.subtle.digest('SHA-256', uint8Array);
