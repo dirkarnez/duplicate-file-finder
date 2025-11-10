@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button id="start">start</button>
+    <script>
+        document.getElementById("start", async () => {
+          const handle = await window.showDirectoryPicker();
+          for await (const a of handle.entries()) {
+            debugger;
+          }
+        });
+    </script>
+</body>
+</html>
